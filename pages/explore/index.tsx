@@ -47,7 +47,7 @@ const Explore: NextPage = () => {
         <ExploreHeader />
         <CreatePost onPostHandler={onPostHandler} />
         {posts.map((post) => (
-          <PostCard post={post} />
+          <PostCard key={post.timestamp} post={post} />
         ))}
       </div>
     </div>

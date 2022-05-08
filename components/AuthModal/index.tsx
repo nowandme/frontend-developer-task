@@ -8,11 +8,10 @@ const AuthModal = ({ closeModal }: IAuthModalProps) => {
       style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
       onClick={() => closeModal()}
     >
-      <div
-        className="px-16 md:px-48 xl:px-96 w-5/6"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <AuthForm />
+      <div className="px-16 md:px-48 xl:px-96 w-5/6">
+        <div onClick={(e) => e.stopPropagation()}>
+          <AuthForm showCloseIcon closeModal={closeModal} />
+        </div>
       </div>
     </div>
   );
