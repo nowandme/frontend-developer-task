@@ -1,9 +1,16 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import logo from '../../public/logo.svg';
 
 const Auth: NextPage = () => {
+  const Router = useRouter();
+
+  function onLoginHandler() {
+    Router.replace('/explore');
+  }
+
   return (
     <div className="h-screen text-center flex items-center justify-center">
       <Head>
@@ -47,7 +54,10 @@ const Auth: NextPage = () => {
             />
           </div>
 
-          <button className="bg-primary w-full text-white text-lg mt-8 py-3 rounded">
+          <button
+            onClick={onLoginHandler}
+            className="bg-primary w-full text-white text-lg mt-8 py-3 rounded font-medium"
+          >
             Login now
           </button>
 
