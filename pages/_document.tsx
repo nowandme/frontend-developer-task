@@ -21,7 +21,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           ></link>
         </Head>
-        <body className="font-sora">
+        <body className="font-sora bg-background">
           <Main />
           <NextScript />
         </body>
