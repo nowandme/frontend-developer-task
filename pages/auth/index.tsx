@@ -1,16 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import AuthForm from '../../components/AuthForm';
 import logo from '../../public/logo.svg';
 
 const Auth: NextPage = () => {
-  const Router = useRouter();
-
-  function onLoginHandler() {
-    Router.replace('/explore');
-  }
-
   return (
     <div className="h-screen text-center flex items-center justify-center">
       <Head>
@@ -21,53 +15,7 @@ const Auth: NextPage = () => {
 
       <div className="w-5/6 lg:w-1/3">
         <Image src={logo} />
-        <div className="w-full flex flex-col border-2 border-border rounded-lg bg-surface px-10 py-6 mt-12">
-          <h1 className="text-grayText uppercase font-medium text-base">
-            Welcome Back
-          </h1>
-          <h3 className="text-white font-semibold mt-2 text-xl">
-            Log into your account
-          </h3>
-
-          <div className="w-full mt-11 text-left">
-            <span className="text-text font-medium text-base">
-              Email or Username
-            </span>
-            <input
-              type="text"
-              placeholder="Enter your email or username"
-              className="text-muteText text-lg w-full outline-none bg-surface rounded border-2 border-border mt-2 p-3"
-            />
-          </div>
-
-          <div className="w-full mt-4 text-left">
-            <div className="w-full flex justify-between items-center">
-              <span className="text-text font-medium text-base">Password</span>
-              <span className="text-text font-medium text-sm cursor-pointer hover:underline">
-                Forgot password?
-              </span>
-            </div>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              className="text-muteText text-lg w-full outline-none bg-surface rounded border-2 border-border mt-2 p-3"
-            />
-          </div>
-
-          <button
-            onClick={onLoginHandler}
-            className="bg-primary w-full text-white text-lg mt-8 py-3 rounded font-medium"
-          >
-            Login now
-          </button>
-
-          <div className="text-muteText text-base mt-6">
-            Not registered yet?{' '}
-            <span className="text-text font-medium cursor-pointer hover:underline">
-              Register →
-            </span>
-          </div>
-        </div>
+        <AuthForm />
       </div>
     </div>
   );

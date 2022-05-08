@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CreatePost = () => {
+const CreatePost = ({ onPostHandler }: ICreatePostProps) => {
   return (
     <div className="w-full bg-surface rounded-lg px-5 py-6">
       <span className="text-xl font-medium text-text">Create Post</span>
@@ -15,7 +15,10 @@ const CreatePost = () => {
         </div>
       </div>
       <div className="w-full flex justify-end mt-4">
-        <button className="bg-primary text-white font-medium text-lg px-9 py-3 rounded">
+        <button
+          onClick={onPostHandler}
+          className="bg-primary text-white font-medium text-lg px-9 py-3 rounded"
+        >
           Post
         </button>
       </div>
@@ -24,3 +27,7 @@ const CreatePost = () => {
 };
 
 export default CreatePost;
+
+interface ICreatePostProps {
+  onPostHandler: React.MouseEventHandler<HTMLButtonElement>;
+}
